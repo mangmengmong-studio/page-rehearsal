@@ -59,6 +59,39 @@ if (audio && soundButton && soundLabel) {
   });
 }
 
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+function openPanel(panel) {
+  panel.showModal();
+  if (!reducedMotion.matches) panel.animate([
+    { opacity: 0, transform: 'translateY(24px) rotate(-1deg) scale(.97)' },
+    { opacity: 1, transform: 'translateY(0) rotate(0) scale(1)' }
+  ], { duration: 380, easing: 'cubic-bezier(.2,.8,.2,1)' });
+}
+async function closePanel(panel) {
+  if (!panel.open || panel.dataset.closing) return;
+  panel.dataset.closing = 'true';
+  panel.getAnimations().forEach(animation => animation.cancel());
+  if (!reducedMotion.matches) {
+    await panel.animate([
+      { opacity: 1, transform: 'translateY(0) scale(1)' },
+      { opacity: 0, transform: 'translateY(16px) scale(.98)' }
+    ], { duration: 180, easing: 'ease-in' }).finished.catch(() => {});
+  }
+  panel.close();
+  delete panel.dataset.closing;
+}
+document.querySelectorAll('dialog').forEach(panel => {
+  panel.querySelector('.close-dialog').addEventListener('click', () => closePanel(panel));
+  panel.addEventListener('cancel', event => {
+    event.preventDefault();
+    closePanel(panel);
+  });
+  panel.addEventListener('click', event => {
+    if (event.target !== panel) return;
+    const box = panel.getBoundingClientRect();
+    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) closePanel(panel);
+  });
+});
 const galleryDialog = document.getElementById('gallery-dialog');
 if (galleryDialog && typeof galleryDialog.showModal === 'function') {
   document.querySelectorAll('.film').forEach(link => {
@@ -68,69 +101,60 @@ if (galleryDialog && typeof galleryDialog.showModal === 'function') {
       picture.src = link.href;
       picture.alt = link.querySelector('img').alt;
       galleryDialog.querySelector('p').textContent = link.dataset.caption;
-      galleryDialog.showModal();
+      openPanel(galleryDialog);
     });
   });
-  galleryDialog.querySelector('button').addEventListener('click', () => galleryDialog.close());
-  galleryDialog.addEventListener('click', event => {
-    if (event.target === galleryDialog) {
-      const rect = galleryDialog.getBoundingClientRect();
-      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) galleryDialog.close();
-    }
-  });
 }
-
-// Content opens over the single-screen artwork instead of adding page sections.
 document.querySelectorAll('[data-open]').forEach(link => {
   link.addEventListener('click', event => {
     const panel = document.getElementById(link.dataset.open);
     if (panel && typeof panel.showModal === 'function') {
       event.preventDefault();
-      panel.showModal();
+      openPanel(panel);
     }
   });
 });
-document.querySelectorAll('.content-dialog').forEach(panel => {
-  panel.querySelector('.close-dialog').addEventListener('click', () => panel.close());
-  panel.addEventListener('click', event => {
-    if (event.target === panel) {
-      const box = panel.getBoundingClientRect();
-      if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) panel.close();
-    }
-  });
-});
-
 const sceneSwitch = document.querySelector('.scene-switch');
 const sceneStatus = document.getElementById('scene-status');
-const sceneImages = { ella: 'assets/ella-hero-cg.webp', manda: 'assets/manda-hero-cg.webp' };
-let sceneRequest = 0;
+const scenes = {
+  ella: { image: 'assets/ella-hero-cg.webp', name: 'Ella', quote: 'Itu jawaban paling yakin yang pernah aku denger.' },
+  manda: { image: 'assets/manda-hero-cg.webp', name: 'Manda', quote: 'Boleh pinjam kapan-kapan? Kalau kakak udah selesai.' }
+};
 if (sceneSwitch) {
   sceneSwitch.hidden = false;
-  sceneSwitch.querySelectorAll('[data-scene]').forEach(button => {
+  const buttons = [...sceneSwitch.querySelectorAll('[data-scene]')];
+  buttons.forEach(button => {
     button.addEventListener('click', async () => {
-      if (button.getAttribute('aria-pressed') === 'true') {
-        sceneRequest++;
-        sceneSwitch.removeAttribute('aria-busy');
-        sceneStatus.textContent = '';
-        return;
-      }
-      const request = ++sceneRequest;
-      const name = button.dataset.scene;
+      if (button.getAttribute('aria-pressed') === 'true' || sceneSwitch.getAttribute('aria-busy') === 'true') return;
+      const scene = scenes[button.dataset.scene];
       const picture = new Image();
-      picture.src = sceneImages[name];
+      picture.src = scene.image;
       sceneSwitch.setAttribute('aria-busy', 'true');
+      buttons.forEach(item => { item.disabled = true; });
       sceneStatus.textContent = 'Memuat latar…';
+      const next = document.querySelector('.scenery-next');
       try {
         await picture.decode();
-        if (request !== sceneRequest) return;
-        document.querySelector('.scenery').style.backgroundImage = `url("${sceneImages[name]}")`;
-        document.querySelector('.hero').dataset.scene = name;
-        sceneSwitch.querySelectorAll('[data-scene]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-        sceneStatus.textContent = `Latar ${button.textContent} ditampilkan.`;
+        next.style.backgroundImage = `url("${scene.image}")`;
+        const quote = document.querySelector('.character-quote');
+        if (!reducedMotion.matches) await quote.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 140, fill: 'forwards' }).finished;
+        document.getElementById('character-line').textContent = `“${scene.quote}”`;
+        document.getElementById('character-name').textContent = `— ${scene.name}`;
+        quote.getAnimations().forEach(animation => animation.cancel());
+        if (!reducedMotion.matches) {
+          quote.animate([{ opacity: 0, transform: 'translateY(5px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 500, easing: 'ease-out' });
+          await next.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 800, easing: 'ease-in-out', fill: 'forwards' }).finished;
+        }
+        document.querySelector('.scenery:not(.scenery-next)').style.backgroundImage = `url("${scene.image}")`;
+        next.getAnimations().forEach(animation => animation.cancel());
+        document.querySelector('.hero').dataset.scene = button.dataset.scene;
+        buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+        sceneStatus.textContent = `Latar ${scene.name} ditampilkan.`;
       } catch {
-        if (request === sceneRequest) sceneStatus.textContent = 'Latar belum bisa dimuat. Coba lagi.';
+        sceneStatus.textContent = 'Latar belum bisa dimuat. Coba lagi.';
       } finally {
-        if (request === sceneRequest) sceneSwitch.removeAttribute('aria-busy');
+        sceneSwitch.removeAttribute('aria-busy');
+        buttons.forEach(item => { item.disabled = false; });
       }
     });
   });

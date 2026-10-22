@@ -41,3 +41,12 @@ Epigraf memakai teks `game/main_menu.rpy`. Sinopsis singkat merangkum premis Bud
 `theme-morning-light.ogg` disalin tanpa perubahan dari `game/audio/bgm/theme_morning_light.ogg`, lagu pembuka (`OPENING_BGM` di `game/opening.rpy`) dan menu cerah (`game/main_menu.rpy`). Audio menggantikan suara hujan di halaman.
 
 Akun sosial mengikuti situs studio: Instagram `https://www.instagram.com/mangmengmong.studio/` dan Threads `https://www.threads.com/@mangmengmong.studio`.
+
+## Kutipan karakter
+
+Kutipan mengikuti dialog naskah secara verbatim dan dipilih dari percakapan ringan, tanpa mengungkap perkembangan atau akhir cerita:
+
+- Ella: “Itu jawaban paling yakin yang pernah aku denger.” — `naskah/03_Arc3_Kedekatan.md`.
+- Manda: “Boleh pinjam kapan-kapan? Kalau kakak udah selesai.” — `naskah/02_Arc2_Pendekatan.md`.
+
+Efek kertas bergaris, lubang jilid, dan selotip dibuat dengan CSS; tulisan tangan memakai font Kalam dari game.
