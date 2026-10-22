@@ -117,7 +117,7 @@ document.querySelectorAll('[data-open]').forEach(link => {
 const sceneSwitch = document.querySelector('.scene-switch');
 const sceneStatus = document.getElementById('scene-status');
 const scenes = {
-  ella: { image: 'assets/ella-hero-cg.webp', name: 'Ella', quote: 'Itu jawaban paling yakin yang pernah aku denger.' },
+  ella: { image: 'assets/ella-hero-cg.webp', name: 'Ella', quote: 'Kalau di sekolah, jangan diem-diem aja kali. Kamu lucu kalau ngomong.' },
   manda: { image: 'assets/manda-hero-cg.webp', name: 'Manda', quote: 'Boleh pinjam kapan-kapan? Kalau kakak udah selesai.' }
 };
 if (sceneSwitch) {

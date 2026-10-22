@@ -46,7 +46,7 @@ Akun sosial mengikuti situs studio: Instagram `https://www.instagram.com/mangmen
 
 Kutipan mengikuti dialog naskah secara verbatim dan dipilih dari percakapan ringan, tanpa mengungkap perkembangan atau akhir cerita:
 
-- Ella: “Itu jawaban paling yakin yang pernah aku denger.” — `naskah/03_Arc3_Kedekatan.md`.
+- Ella: “Kalau di sekolah, jangan diem-diem aja kali. Kamu lucu kalau ngomong.” — `naskah/03_Arc3_Kedekatan.md`.
 - Manda: “Boleh pinjam kapan-kapan? Kalau kakak udah selesai.” — `naskah/02_Arc2_Pendekatan.md`.
 
 Efek kertas bergaris, lubang jilid, dan selotip dibuat dengan CSS; tulisan tangan memakai font Kalam dari game.
