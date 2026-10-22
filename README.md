@@ -6,6 +6,8 @@ Halaman utama memakai pilihan CG Ella dan Manda khusus sebagai latar penuh, tanp
 
 CG dibuat dengan built-in imagegen berdasarkan acuan resmi masing-masing karakter. Prompt dan sumber aset tercatat di `assets/credits.md` serta `assets/ella-hero-prompt.txt` dan `assets/manda-hero-prompt.txt`.
 
+Bahasa website dapat diganti lewat tombol ID/EN di header. Indonesia adalah bahasa awal; pilihan disimpan di localStorage jika tersedia. `translations.js` memuat terjemahan antarmuka, kutipan, sinopsis, label aksesibilitas, dan metadata. Versi Inggris tetap menjelaskan bahwa game berbahasa Indonesia. Unduhan kalender mengikuti bahasa yang dipilih, dengan jadwal rilis yang sama.
+
 ## GitHub Pages
 
 File situs ada langsung di root repository, tanpa build atau dependency:
@@ -13,7 +15,9 @@ File situs ada langsung di root repository, tanpa build atau dependency:
 - `index.html`
 - `style.css`
 - `main.js`
+- `translations.js`
 - `rehearsal-release.ics`
+- `rehearsal-release-en.ics`
 - `assets/`
 - `.nojekyll`
 
