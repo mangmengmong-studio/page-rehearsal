@@ -11,7 +11,7 @@ Aset resmi dari proyek game milik pengguna, `/home/yusufprananda/Projects/vn-pro
 | `PlusJakartaSans-Regular.ttf` | `game/fonts/` |
 | `JetBrainsMono-Regular.ttf` | `game/fonts/` |
 
-Artwork dikompresi ke WebP; logo resmi mempertahankan transparansi. Font disertai lisensi SIL Open Font License masing-masing. Ikon favicon berhuruf R adalah penanda tab website, bukan logo pengganti game.
+Artwork dikompresi ke WebP; logo resmi mempertahankan transparansi. Font disertai lisensi SIL Open Font License masing-masing. Favicon memakai ikon resmi Rehearsal yang diberikan pengguna pada 23 Oktober 2026; diperkecil tanpa mengubah desain untuk ICO, PNG 32/192 px, dan Apple touch icon 180 px.
 
 Epigraf memakai teks `game/main_menu.rpy`. Sinopsis singkat merangkum premis Budiman/Ella dari materi cerita tanpa mengungkap akhir. Kutipan di halaman utama mengikuti main menu secara verbatim.
 
