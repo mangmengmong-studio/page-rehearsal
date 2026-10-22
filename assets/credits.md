@@ -13,7 +13,7 @@ Aset resmi dari proyek game milik pengguna, `/home/yusufprananda/Projects/vn-pro
 
 Artwork dikompresi ke WebP; logo resmi mempertahankan transparansi. Font disertai lisensi SIL Open Font License masing-masing. Ikon favicon berhuruf R adalah penanda tab website, bukan logo pengganti game.
 
-Epigraf memakai teks `game/main_menu.rpy`. Sinopsis dan informasi cerita berasal dari `produksi/Store_Copy.md`. Efek gerimis memakai CSS dan mengikuti preferensi reduced motion. Tidak ada gambar atau suara generatif baru.
+Epigraf memakai teks `game/main_menu.rpy`. Sinopsis singkat merangkum premis Budiman/Ella dari materi cerita tanpa mengungkap akhir. Kutipan di halaman utama mengikuti main menu secara verbatim.
 
 ## Pembaruan scrapbook
 
@@ -33,3 +33,11 @@ Epigraf memakai teks `game/main_menu.rpy`. Sinopsis dan informasi cerita berasal
 ## CG Ella untuk halaman penuh
 
 `ella-hero-cg.webp` adalah CG baru yang dihasilkan dengan built-in imagegen pada 23 Oktober 2026, memakai `produksi/karakter/ella-v2/acuan-seragam.png` sebagai acuan identitas dan `game/images/cg/cg_ella_kartu.png` sebagai acuan gaya. Prompt lengkap: `ella-hero-prompt.txt`. CG dikonversi ke WebP untuk web. Sprite `ella.webp` dan latar kelas terpisah tidak digunakan pada halaman utama.
+
+## CG Manda dan BGM
+
+`manda-hero-cg.webp` dibuat menggunakan built-in imagegen pada 23 Oktober 2026. Acuan identitas: `produksi/karakter/manda-v2/acuan.png` dan detail identitas terkunci di `README.md` karakter; acuan gaya/komposisi: CG Ella website. Prompt lengkap: `manda-hero-prompt.txt`. Ilustrasi dikonversi ke WebP.
+
+`theme-morning-light.ogg` disalin tanpa perubahan dari `game/audio/bgm/theme_morning_light.ogg`, lagu pembuka (`OPENING_BGM` di `game/opening.rpy`) dan menu cerah (`game/main_menu.rpy`). Audio menggantikan suara hujan di halaman.
+
+Akun sosial mengikuti situs studio: Instagram `https://www.instagram.com/mangmengmong.studio/` dan Threads `https://www.threads.com/@mangmengmong.studio`.

@@ -20,13 +20,13 @@ function updateCountdown() {
 const timer = setInterval(updateCountdown, 1000);
 updateCountdown();
 
-const audio = document.getElementById('rain-audio');
+const audio = document.getElementById('bgm-audio');
 const soundButton = document.getElementById('sound-toggle');
 const soundLabel = document.getElementById('sound-label');
 
 function setSoundState(playing) {
   soundButton.setAttribute('aria-pressed', String(playing));
-  soundLabel.textContent = playing ? 'Matikan suara hujan' : 'Nyalakan suara hujan';
+  soundLabel.textContent = playing ? 'Jeda musik' : 'Putar musik';
 }
 
 if (audio && soundButton && soundLabel) {
@@ -42,7 +42,7 @@ if (audio && soundButton && soundLabel) {
       await audio.play();
     } catch {
       setSoundState(false);
-      soundLabel.textContent = 'Coba nyalakan hujan lagi';
+      soundLabel.textContent = 'Coba putar musik lagi';
     } finally {
       soundButton.disabled = false;
     }
@@ -51,7 +51,7 @@ if (audio && soundButton && soundLabel) {
   audio.addEventListener('pause', () => setSoundState(false));
   audio.addEventListener('error', () => {
     setSoundState(false);
-    soundLabel.textContent = 'Suara hujan tidak tersedia';
+    soundLabel.textContent = 'Musik tidak tersedia';
     soundButton.disabled = true;
   });
   document.addEventListener('visibilitychange', () => {
@@ -99,3 +99,39 @@ document.querySelectorAll('.content-dialog').forEach(panel => {
     }
   });
 });
+
+const sceneSwitch = document.querySelector('.scene-switch');
+const sceneStatus = document.getElementById('scene-status');
+const sceneImages = { ella: 'assets/ella-hero-cg.webp', manda: 'assets/manda-hero-cg.webp' };
+let sceneRequest = 0;
+if (sceneSwitch) {
+  sceneSwitch.hidden = false;
+  sceneSwitch.querySelectorAll('[data-scene]').forEach(button => {
+    button.addEventListener('click', async () => {
+      if (button.getAttribute('aria-pressed') === 'true') {
+        sceneRequest++;
+        sceneSwitch.removeAttribute('aria-busy');
+        sceneStatus.textContent = '';
+        return;
+      }
+      const request = ++sceneRequest;
+      const name = button.dataset.scene;
+      const picture = new Image();
+      picture.src = sceneImages[name];
+      sceneSwitch.setAttribute('aria-busy', 'true');
+      sceneStatus.textContent = 'Memuat latar…';
+      try {
+        await picture.decode();
+        if (request !== sceneRequest) return;
+        document.querySelector('.scenery').style.backgroundImage = `url("${sceneImages[name]}")`;
+        document.querySelector('.hero').dataset.scene = name;
+        sceneSwitch.querySelectorAll('[data-scene]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+        sceneStatus.textContent = `Latar ${button.textContent} ditampilkan.`;
+      } catch {
+        if (request === sceneRequest) sceneStatus.textContent = 'Latar belum bisa dimuat. Coba lagi.';
+      } finally {
+        if (request === sceneRequest) sceneSwitch.removeAttribute('aria-busy');
+      }
+    });
+  });
+}

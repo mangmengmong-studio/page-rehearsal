@@ -2,9 +2,9 @@
 
 Halaman coming soon resmi Rehearsal oleh MangMengMong Studio. Rilis **30 Oktober 2026, 18.00 WIB** (`2026-10-30T11:00:00Z`).
 
-Halaman utama memakai satu CG Ella khusus sebagai latar penuh, tanpa sprite terpisah. Layout satu layar menyesuaikan desktop, HP, dan orientasi landscape. Cerita dan galeri dibuka lewat dialog; galeri mendukung pembesaran gambar dan tombol Escape. Suara hujan opsional aktif setelah tombol ditekan. Hitung mundur menggunakan jadwal WIB di semua zona waktu dan berhenti di nol saat rilis tiba.
+Halaman utama memakai pilihan CG Ella dan Manda khusus sebagai latar penuh, tanpa sprite terpisah. Layout satu layar menyesuaikan desktop, HP, dan orientasi landscape. Cerita dan galeri dibuka lewat dialog; galeri mendukung pembesaran gambar dan tombol Escape. BGM `theme_morning_light` dari opening/menu cerah game dapat diputar atau dijeda melalui tombol musik. Audio hanya aktif setelah tombol ditekan. Tombol Ella/Manda mengganti latar setelah gambar selesai dimuat. Hitung mundur menggunakan jadwal WIB di semua zona waktu dan berhenti di nol saat rilis tiba.
 
-CG dibuat dengan built-in imagegen berdasarkan acuan resmi Ella. Prompt dan sumber aset tercatat di `assets/credits.md` dan `assets/ella-hero-prompt.txt`.
+CG dibuat dengan built-in imagegen berdasarkan acuan resmi masing-masing karakter. Prompt dan sumber aset tercatat di `assets/credits.md` serta `assets/ella-hero-prompt.txt` dan `assets/manda-hero-prompt.txt`.
 
 ## GitHub Pages
 
