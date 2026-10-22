@@ -1,4 +1,5 @@
 'use strict';
+const { t, message, renderQuote } = window.rehearsalI18n;
 const RELEASE_AT = Date.parse('2026-10-30T18:00:00+07:00');
 function countdownParts(now) {
   const seconds = Math.max(0, Math.floor((RELEASE_AT - now) / 1000));
@@ -13,7 +14,7 @@ function updateCountdown() {
   if (now >= RELEASE_AT) {
     const status = document.getElementById('release-status');
     status.hidden = false;
-    status.textContent = 'Waktu yang ditunggu sudah tiba. Cek kabar rilis terbaru dari MangMengMong Studio.';
+    message(status, 'released');
     clearInterval(timer);
   }
 }
@@ -26,12 +27,13 @@ const soundLabel = document.getElementById('sound-label');
 
 function setSoundState(playing) {
   soundButton.setAttribute('aria-pressed', String(playing));
-  soundLabel.textContent = playing ? 'Jeda musik' : 'Putar musik';
+  message(soundLabel, playing ? 'music.pause' : 'music.play');
 }
 
 if (audio && soundButton && soundLabel) {
   soundButton.hidden = false;
   audio.volume = 0.35;
+  setSoundState(false);
   soundButton.addEventListener('click', async () => {
     if (!audio.paused) {
       audio.pause();
@@ -42,7 +44,7 @@ if (audio && soundButton && soundLabel) {
       await audio.play();
     } catch {
       setSoundState(false);
-      soundLabel.textContent = 'Coba putar musik lagi';
+      message(soundLabel, 'music.retry');
     } finally {
       soundButton.disabled = false;
     }
@@ -51,7 +53,7 @@ if (audio && soundButton && soundLabel) {
   audio.addEventListener('pause', () => setSoundState(false));
   audio.addEventListener('error', () => {
     setSoundState(false);
-    soundLabel.textContent = 'Musik tidak tersedia';
+    message(soundLabel, 'music.error');
     soundButton.disabled = true;
   });
   document.addEventListener('visibilitychange', () => {
@@ -117,8 +119,8 @@ document.querySelectorAll('[data-open]').forEach(link => {
 const sceneSwitch = document.querySelector('.scene-switch');
 const sceneStatus = document.getElementById('scene-status');
 const scenes = {
-  ella: { image: 'assets/ella-hero-cg.webp', name: 'Ella', quote: 'Kalau di sekolah, jangan diem-diem aja kali. Kamu lucu kalau ngomong.' },
-  manda: { image: 'assets/manda-hero-cg.webp', name: 'Manda', quote: 'Boleh pinjam kapan-kapan? Kalau kakak udah selesai.' }
+  ella: { image: 'assets/ella-hero-cg.webp', name: 'Ella' },
+  manda: { image: 'assets/manda-hero-cg.webp', name: 'Manda' }
 };
 if (sceneSwitch) {
   sceneSwitch.hidden = false;
@@ -131,15 +133,14 @@ if (sceneSwitch) {
       picture.src = scene.image;
       sceneSwitch.setAttribute('aria-busy', 'true');
       buttons.forEach(item => { item.disabled = true; });
-      sceneStatus.textContent = 'Memuat latar…';
+      message(sceneStatus, 'scene.loading');
       const next = document.querySelector('.scenery-next');
       try {
         await picture.decode();
         next.style.backgroundImage = `url("${scene.image}")`;
         const quote = document.querySelector('.character-quote');
         if (!reducedMotion.matches) await quote.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 140, fill: 'forwards' }).finished;
-        document.getElementById('character-line').textContent = `“${scene.quote}”`;
-        document.getElementById('character-name').textContent = `— ${scene.name}`;
+        renderQuote(button.dataset.scene);
         quote.getAnimations().forEach(animation => animation.cancel());
         if (!reducedMotion.matches) {
           quote.animate([{ opacity: 0, transform: 'translateY(5px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 500, easing: 'ease-out' });
@@ -149,9 +150,9 @@ if (sceneSwitch) {
         next.getAnimations().forEach(animation => animation.cancel());
         document.querySelector('.hero').dataset.scene = button.dataset.scene;
         buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-        sceneStatus.textContent = `Latar ${scene.name} ditampilkan.`;
+        message(sceneStatus, 'scene.ready', { name: scene.name });
       } catch {
-        sceneStatus.textContent = 'Latar belum bisa dimuat. Coba lagi.';
+        message(sceneStatus, 'scene.error');
       } finally {
         sceneSwitch.removeAttribute('aria-busy');
         buttons.forEach(item => { item.disabled = false; });

@@ -50,3 +50,7 @@ Kutipan mengikuti dialog naskah secara verbatim dan dipilih dari percakapan ring
 - Manda: “Boleh pinjam kapan-kapan? Kalau kakak udah selesai.” — `naskah/02_Arc2_Pendekatan.md`.
 
 Efek kertas bergaris, lubang jilid, dan selotip dibuat dengan CSS; tulisan tangan memakai font Kalam dari game.
+
+## Bahasa website
+
+Dialog Indonesia mempertahankan naskah asli; versi Inggris di `translations.js` merupakan terjemahan untuk website. Dukungan dua bahasa website tidak menyatakan bahwa game sudah diterjemahkan. Kedua file kalender menggunakan jadwal rilis UTC yang sama.
