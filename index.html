@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#282832">
+  <title>Rehearsal — Segera Hadir, 30 Oktober 2026</title>
+  <meta name="description" content="Beberapa hal memang hanya bisa kita jalani, meski tahu akhirnya tidak akan berubah. Rehearsal, 30 Oktober 2026, 18.00 WIB.">
+  <meta property="og:title" content="Rehearsal — 30 Oktober 2026">
+  <meta property="og:description" content="Rehearsal, sebuah visual novel oleh MangMengMong Studio. 30 Oktober 2026, 18.00 WIB.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/ella-hero-cg.webp">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+  <noscript><style>.content-dialog:target{display:block;position:fixed;inset:0;z-index:10;overflow:auto}.content-dialog:target .close-dialog{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip-link" href="#utama">Lewati ke konten</a>
+<div class="hero" id="home">
+  <div class="scenery" aria-hidden="true"></div>
+  <div class="scenery scenery-next" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="studio-brand" href="https://mangmengmong-studio.github.io/" aria-label="MangMengMong Studio"><img src="assets/studio.webp" width="100" height="100" alt="MangMengMong Studio"></a>
+    <nav aria-label="Navigasi utama"><a href="#home" aria-current="page">Home</a><a href="#story-dialog" data-open="story-dialog">Cerita</a><a href="#scenes-dialog" data-open="scenes-dialog">Galeri</a><a class="back-link" href="https://mangmengmong-studio.github.io/">← Kembali ke Studio</a></nav>
+  </header>
+  <main id="utama" class="opening">
+    <p class="eyebrow">A VISUAL NOVEL<br>BY MANGMENGMONG STUDIO</p>
+    <h1><img src="assets/logo-light.webp" width="900" height="274" alt="Rehearsal"></h1>
+    <p class="epigraph">Beberapa hal memang hanya bisa kita jalani,<br>meski tahu akhirnya tidak akan berubah.</p>
+    <section class="release" aria-label="Jadwal rilis">
+      <p class="release-label">CERITA DIMULAI DALAM</p>
+      <div class="countdown" role="group" aria-label="Hitung mundur menuju 30 Oktober 2026 pukul 18.00 WIB">
+        <div><strong id="days">—</strong><span>HARI</span></div>
+        <div><strong id="hours">—</strong><span>JAM</span></div>
+        <div><strong id="minutes">—</strong><span>MENIT</span></div>
+        <div><strong id="seconds">—</strong><span>DETIK</span></div>
+      </div>
+      <p class="release-date"><time datetime="2026-10-30T18:00:00+07:00">30 Oktober 2026 <span>·</span> 18.00 WIB</time></p>
+      <p id="release-status" role="status" hidden></p>
+    </section>
+    <p class="platforms"><span>Segera hadir untuk</span> Windows <i>·</i> Linux <i>·</i> Android</p>
+    <div class="hero-actions"><a class="outline-button" href="rehearsal-release.ics" download><span aria-hidden="true">＋</span> Simpan tanggalnya</a><button class="sound-control" id="sound-toggle" type="button" aria-pressed="false" hidden><span aria-hidden="true">♫</span> <span id="sound-label">Putar musik</span></button></div>
+  </main>
+  <figure class="character-quote" aria-label="Kutipan karakter"><blockquote id="character-line">“Kalau di sekolah, jangan diem-diem aja kali. Kamu lucu kalau ngomong.”</blockquote><figcaption id="character-name">— Ella</figcaption></figure>
+  <div class="scene-switch" role="group" aria-label="Pilih latar CG" hidden><span>Latar</span><button type="button" data-scene="ella" aria-pressed="true">Ella</button><button type="button" data-scene="manda" aria-pressed="false">Manda</button><span id="scene-status" class="sr-only" role="status"></span></div>
+  <footer class="hero-footer"><p>© 2026 MangMengMong Studio</p><nav aria-label="Media sosial"><a href="https://www.instagram.com/mangmengmong.studio/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.threads.com/@mangmengmong.studio" target="_blank" rel="noopener noreferrer">Threads ↗</a></nav></footer>
+</div>
+<dialog id="story-dialog" class="content-dialog" aria-labelledby="story-title">
+  <button class="close-dialog" type="button" aria-label="Tutup cerita"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+  <p class="eyebrow">TENTANG REHEARSAL</p>
+  <h2 id="story-title">Ada yang ingin kamu bilang?</h2>
+  <p>Bagi Budiman, mengobrol dengan Ella tidak sesederhana kelihatannya. Ada percakapan yang terus ia ulang di kepala, dan kalimat yang belum berani ia ucapkan.</p>
+  <p>Ikuti keseharian Budiman, Ella, dan Manda dalam <em>Rehearsal</em>, sebuah visual novel berbahasa Indonesia.</p>
+  <a class="follow-button" href="https://www.instagram.com/mangmengmong.studio/" target="_blank" rel="noopener noreferrer">Ikuti perkembangan ↗</a>
+</dialog>
+<dialog id="scenes-dialog" class="content-dialog scenes-dialog" aria-labelledby="scenes-title">
+  <button class="close-dialog" type="button" aria-label="Tutup galeri"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+  <p class="eyebrow">GALERI</p>
+  <h2 id="scenes-title">Cuplikan suasana</h2>
+  <div class="scene-grid">
+<a class="film" href="assets/gallery-street.webp" data-caption="Jalan pulang, menjelang sore"><img src="assets/gallery-street.webp" width="1000" height="563" alt="Jalan pulang, menjelang sore" loading="lazy"><span>Jalan pulang, menjelang sore</span></a>
+<a class="film" href="assets/gallery-classroom.webp" data-caption="Kelas setelah bel pulang"><img src="assets/gallery-classroom.webp" width="1000" height="563" alt="Kelas setelah bel pulang" loading="lazy"><span>Kelas setelah bel pulang</span></a>
+<a class="film" href="assets/gallery-corridor.webp" data-caption="Lorong sekolah yang mulai sepi"><img src="assets/gallery-corridor.webp" width="1000" height="563" alt="Lorong sekolah yang mulai sepi" loading="lazy"><span>Lorong sekolah yang mulai sepi</span></a>
+<a class="film" href="assets/gallery-library.webp" data-caption="Satu halaman lagi di perpustakaan"><img src="assets/gallery-library.webp" width="1000" height="563" alt="Satu halaman lagi di perpustakaan" loading="lazy"><span>Satu halaman lagi di perpustakaan</span></a>
+  </div>
+</dialog>
+<dialog id="gallery-dialog" aria-label="Pratinjau ilustrasi"><button class="close-dialog" type="button" aria-label="Tutup pratinjau"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button><img width="1920" height="1080" alt=""><p></p></dialog>
+<audio id="bgm-audio" src="assets/theme-morning-light.ogg" preload="none" loop></audio>
+</body>
+</html>

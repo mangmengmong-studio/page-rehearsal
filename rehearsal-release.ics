@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MangMengMong Studio//Rehearsal//ID
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rehearsal-release-20261030@mangmengmong.github.io
+DTSTAMP:20261022T000000Z
+DTSTART:20261030T110000Z
+DTEND:20261030T113000Z
+SUMMARY:Rehearsal — Rilis
+DESCRIPTION:Rehearsal oleh MangMengMong Studio. 30 Oktober 2026 pukul 18.00 WIB. Kabar terbaru: https://www.instagram.com/mangmengmong.studio/
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rehearsal rilis 30 menit lagi.
+END:VALARM
+END:VEVENT
+END:VCALENDAR
