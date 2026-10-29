@@ -1,26 +1,5 @@
 'use strict';
-const { t, message, renderQuote } = window.rehearsalI18n;
-const RELEASE_AT = Date.parse('2026-10-30T18:00:00+07:00');
-function countdownParts(now) {
-  const seconds = Math.max(0, Math.floor((RELEASE_AT - now) / 1000));
-  return [Math.floor(seconds / 86400), Math.floor(seconds / 3600) % 24, Math.floor(seconds / 60) % 60, seconds % 60];
-}
-function updateCountdown() {
-  const now = Date.now();
-  const parts = countdownParts(now);
-  ['days', 'hours', 'minutes', 'seconds'].forEach((id, i) => {
-    document.getElementById(id).textContent = String(parts[i]).padStart(2, '0');
-  });
-  if (now >= RELEASE_AT) {
-    const status = document.getElementById('release-status');
-    status.hidden = false;
-    message(status, 'released');
-    clearInterval(timer);
-  }
-}
-const timer = setInterval(updateCountdown, 1000);
-updateCountdown();
-
+const { message, renderQuote } = window.rehearsalI18n;
 const audio = document.getElementById('bgm-audio');
 const soundButton = document.getElementById('sound-toggle');
 const soundLabel = document.getElementById('sound-label');

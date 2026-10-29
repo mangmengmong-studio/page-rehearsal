@@ -2,17 +2,32 @@
 (() => {
   const copy = {
     id: {
-      title: 'Rehearsal — Segera Hadir, 30 Oktober 2026',
-      description: 'Beberapa hal memang hanya bisa kita jalani, meski tahu akhirnya tidak akan berubah. Rehearsal, 30 Oktober 2026, 18.00 WIB.',
-      'og.title': 'Rehearsal — 30 Oktober 2026',
-      'og.description': 'Rehearsal, sebuah visual novel oleh MangMengMong Studio. 30 Oktober 2026, 18.00 WIB.',
+      "release": "Jadwal rilis",
+      "begins": "PEMBARUAN PENGEMBANGAN",
+      "heading": "Perilisan ditunda",
+      "summary": "Sebelumnya dijadwalkan pada 30 Oktober 2026, Rehearsal ditunda hingga waktu yang belum ditentukan.",
+      "note": "Kami memberikan lebih banyak waktu untuk cerita, visual, dan kualitas pengalaman bermain.",
+      "platforms": "Dalam pengembangan untuk",
+      "announcement": "Baca pengumuman",
+      "update.close": "Tutup pengumuman",
+      "update.title": "Tentang perilisan Rehearsal",
+      "update.label": "PEMBARUAN PENGEMBANGAN",
+      "update.greeting": "Halo, semuanya! 🐱",
+      "update.schedule": "Kami ingin menyampaikan bahwa perilisan Rehearsal, yang sebelumnya dijadwalkan pada 30 Oktober 2026, ditunda untuk waktu yang belum ditentukan.",
+      "update.origin": "Awalnya, proyek ini kami mulai dengan tujuan sederhana: membuat visual novel kecil, menyelesaikannya, lalu merilisnya sebagai game pertama kami.",
+      "update.reason": "Namun, seiring berjalannya waktu, cerita dan karakter di Rehearsal mulai hidup. Kami merasa game ini akan sangat sayang jika hanya sekadar dirilis. Karena itu, kami memutuskan untuk memberikan lebih banyak waktu agar pengalaman bermainnya bisa lebih baik, baik dari sisi cerita, visual, maupun keseluruhan kualitasnya.",
+      "update.care": "Ini bukan berarti kami mengejar kesempurnaan, tetapi kami percaya masih ada hal-hal yang bisa kami lakukan untuk membuat Rehearsal menjadi pengalaman yang lebih berkesan.",
+      "update.progress": "Kami akan terus mengembangkan Rehearsal dan membagikan perkembangannya di waktu mendatang.",
+      "update.thanks": "Terima kasih untuk semua yang sudah menunjukkan perhatian dan dukungannya terhadap proyek pertama kami.",
+      "update.closing": "Sampai jumpa di update berikutnya!",
+
+      title: 'Rehearsal — Pembaruan Pengembangan',
+      description: 'Perilisan Rehearsal ditunda hingga waktu yang belum ditentukan. Ikuti kabar pengembangan terbaru dari MangMengMong Studio.',
+      'og.title': 'Rehearsal — Pembaruan Pengembangan',
+      'og.description': 'Perilisan Rehearsal ditunda hingga waktu yang belum ditentukan. Kami memberikan lebih banyak waktu untuk cerita, visual, dan kualitas pengalaman bermain.',
       skip: 'Lewati ke konten', navigation: 'Navigasi utama', home: 'Beranda', story: 'Cerita', gallery: 'Galeri', back: '← Kembali ke Studio',
       eyebrow: 'SEBUAH VISUAL NOVEL<br>OLEH MANGMENGMONG STUDIO',
       epigraph: 'Beberapa hal memang hanya bisa kita jalani,<br>meski tahu akhirnya tidak akan berubah.',
-      release: 'Jadwal rilis', countdown: 'Hitung mundur menuju 30 Oktober 2026 pukul 18.00 WIB', begins: 'CERITA DIMULAI DALAM',
-      days: 'HARI', hours: 'JAM', minutes: 'MENIT', seconds: 'DETIK', date: '30 Oktober 2026 <span>·</span> 18.00 WIB',
-      released: 'Waktu yang ditunggu sudah tiba. Cek kabar rilis terbaru dari MangMengMong Studio.',
-      platforms: 'Segera hadir untuk', calendar: 'Simpan tanggalnya', calendarFile: 'rehearsal-release.ics',
       'music.play': 'Putar musik', 'music.pause': 'Jeda musik', 'music.retry': 'Coba putar musik lagi', 'music.error': 'Musik tidak tersedia',
       quote: 'Kutipan karakter', 'quote.ella': 'Kalau di sekolah, jangan diem-diem aja kali. Kamu lucu kalau ngomong.', 'quote.manda': 'Boleh pinjam kapan-kapan? Kalau kakak udah selesai.',
       'scene.label': 'Pilih latar CG', 'scene.short': 'Latar', 'scene.loading': 'Memuat latar…', 'scene.ready': 'Latar {name} ditampilkan.', 'scene.error': 'Latar belum bisa dimuat. Coba lagi.',
@@ -24,17 +39,32 @@
       preview: 'Pratinjau ilustrasi', 'preview.close': 'Tutup pratinjau'
     },
     en: {
-      title: 'Rehearsal — Coming Soon, 30 October 2026',
-      description: 'Some things we can only live through, even when we know the ending won’t change. Rehearsal, 30 October 2026, 18:00 WIB (UTC+7).',
-      'og.title': 'Rehearsal — 30 October 2026',
-      'og.description': 'Rehearsal, a visual novel by MangMengMong Studio. 30 October 2026, 18:00 WIB (UTC+7).',
+      "release": "Release schedule",
+      "begins": "DEVELOPMENT UPDATE",
+      "heading": "Release postponed",
+      "summary": "Previously scheduled for 30 October 2026, Rehearsal has been postponed with no new date set.",
+      "note": "We are taking more time for the story, visuals, and overall quality of the experience.",
+      "platforms": "In development for",
+      "announcement": "Read announcement",
+      "update.close": "Close announcement",
+      "update.title": "About the release of Rehearsal",
+      "update.label": "DEVELOPMENT UPDATE",
+      "update.greeting": "Hello, everyone! 🐱",
+      "update.schedule": "The release of Rehearsal, previously scheduled for 30 October 2026, has been postponed with no new date set.",
+      "update.origin": "We began this project with a simple goal: make a small visual novel, finish it, and release it as our first game.",
+      "update.reason": "As time went on, the story and characters in Rehearsal began to come alive. We felt they deserved more care before release. So we decided to take more time to improve the experience, from the story and visuals to its overall quality.",
+      "update.care": "We are not chasing perfection, but we believe there are still things we can do to make Rehearsal a more memorable experience.",
+      "update.progress": "We will continue developing Rehearsal and sharing our progress in the future.",
+      "update.thanks": "Thank you to everyone who has shown interest in and supported our first project.",
+      "update.closing": "See you in the next update!",
+
+      title: 'Rehearsal — Development Update',
+      description: 'The release of Rehearsal has been postponed with no new date set. Follow development updates from MangMengMong Studio.',
+      'og.title': 'Rehearsal — Development Update',
+      'og.description': 'The release of Rehearsal has been postponed with no new date set. We are taking more time for the story, visuals, and overall quality of the experience.',
       skip: 'Skip to content', navigation: 'Main navigation', home: 'Home', story: 'Story', gallery: 'Gallery', back: '← Back to Studio',
       eyebrow: 'A VISUAL NOVEL<br>BY MANGMENGMONG STUDIO',
       epigraph: 'Some things we can only live through,<br>even when we know the ending won’t change.',
-      release: 'Release schedule', countdown: 'Countdown to 30 October 2026 at 18:00 WIB (UTC+7)', begins: 'THE STORY BEGINS IN',
-      days: 'DAYS', hours: 'HOURS', minutes: 'MINUTES', seconds: 'SECONDS', date: '30 October 2026 <span>·</span> 18:00 WIB (UTC+7)',
-      released: 'The wait is over. Check the latest release news from MangMengMong Studio.',
-      platforms: 'Coming soon for', calendar: 'Save the date', calendarFile: 'rehearsal-release-en.ics',
       'music.play': 'Play music', 'music.pause': 'Pause music', 'music.retry': 'Try playing again', 'music.error': 'Music unavailable',
       quote: 'Character quote', 'quote.ella': 'Don’t be so quiet at school. You’re funny when you talk.', 'quote.manda': 'Can I borrow it sometime? When you’re done with it.',
       'scene.label': 'Choose background CG', 'scene.short': 'Scene', 'scene.loading': 'Loading background…', 'scene.ready': '{name} background displayed.', 'scene.error': 'Couldn’t load the background. Please try again.',
@@ -76,11 +106,11 @@
     put('.skip-link', 'skip'); put('.topbar nav', 'navigation', 'aria-label');
     put('.topbar nav>a:first-child', 'home'); put('[data-open="story-dialog"]', 'story'); put('[data-open="scenes-dialog"]', 'gallery'); put('.back-link', 'back');
     html('.opening>.eyebrow', 'eyebrow'); html('.epigraph', 'epigraph');
-    put('.release', 'release', 'aria-label'); put('.countdown', 'countdown', 'aria-label'); put('.release-label', 'begins');
-    ['days', 'hours', 'minutes', 'seconds'].forEach(key => put(`#${key}+span`, key));
-    html('.release-date time', 'date'); put('.platforms>span', 'platforms');
-    document.querySelector('.outline-button').innerHTML = `<span aria-hidden="true">＋</span> ${t('calendar')}`;
-    put('.outline-button', 'calendarFile', 'href');
+    put('.release', 'release', 'aria-label'); put('.release-label', 'begins');
+    put('.release-heading', 'heading'); put('.release-summary', 'summary'); put('.release-note', 'note');
+    put('.platforms>span', 'platforms'); put('.outline-button', 'announcement');
+    put('#update-dialog .close-dialog', 'update.close', 'aria-label'); put('#update-title', 'update.title');
+    document.querySelectorAll('[data-update]').forEach(node => { node.textContent = t(`update.${node.dataset.update}`); });
     put('.character-quote', 'quote', 'aria-label'); renderQuote();
     put('.scene-switch', 'scene.label', 'aria-label'); put('.scene-switch>span:first-child', 'scene.short');
     put('.hero-footer nav', 'socials', 'aria-label');

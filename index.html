@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#282832">
-  <title>Rehearsal — Segera Hadir, 30 Oktober 2026</title>
-  <meta name="description" content="Beberapa hal memang hanya bisa kita jalani, meski tahu akhirnya tidak akan berubah. Rehearsal, 30 Oktober 2026, 18.00 WIB.">
-  <meta property="og:title" content="Rehearsal — 30 Oktober 2026">
-  <meta property="og:description" content="Rehearsal, sebuah visual novel oleh MangMengMong Studio. 30 Oktober 2026, 18.00 WIB.">
+  <title>Rehearsal — Pembaruan Pengembangan</title>
+  <meta name="description" content="Perilisan Rehearsal ditunda hingga waktu yang belum ditentukan. Ikuti kabar pengembangan terbaru dari MangMengMong Studio.">
+  <meta property="og:title" content="Rehearsal — Pembaruan Pengembangan">
+  <meta property="og:description" content="Perilisan Rehearsal ditunda hingga waktu yang belum ditentukan. Kami memberikan lebih banyak waktu untuk cerita, visual, dan kualitas pengalaman bermain.">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
@@ -32,23 +32,32 @@
     <h1><img src="assets/logo-light.webp" width="900" height="274" alt="Rehearsal"></h1>
     <p class="epigraph">Beberapa hal memang hanya bisa kita jalani,<br>meski tahu akhirnya tidak akan berubah.</p>
     <section class="release" aria-label="Jadwal rilis">
-      <p class="release-label">CERITA DIMULAI DALAM</p>
-      <div class="countdown" role="group" aria-label="Hitung mundur menuju 30 Oktober 2026 pukul 18.00 WIB">
-        <div><strong id="days">—</strong><span>HARI</span></div>
-        <div><strong id="hours">—</strong><span>JAM</span></div>
-        <div><strong id="minutes">—</strong><span>MENIT</span></div>
-        <div><strong id="seconds">—</strong><span>DETIK</span></div>
-      </div>
-      <p class="release-date"><time datetime="2026-10-30T18:00:00+07:00">30 Oktober 2026 <span>·</span> 18.00 WIB</time></p>
-      <p id="release-status" role="status" hidden></p>
+      <p class="release-label">PEMBARUAN PENGEMBANGAN</p>
+      <h2 class="release-heading">Perilisan ditunda</h2>
+      <p class="release-summary">Sebelumnya dijadwalkan pada 30 Oktober 2026, Rehearsal ditunda hingga waktu yang belum ditentukan.</p>
+      <p class="release-note">Kami memberikan lebih banyak waktu untuk cerita, visual, dan kualitas pengalaman bermain.</p>
     </section>
-    <p class="platforms"><span>Segera hadir untuk</span> Windows <i>·</i> Linux <i>·</i> Android</p>
-    <div class="hero-actions"><a class="outline-button" href="rehearsal-release.ics" download><span aria-hidden="true">＋</span> Simpan tanggalnya</a><button class="sound-control" id="sound-toggle" type="button" aria-pressed="false" hidden><span aria-hidden="true">♫</span> <span id="sound-label">Putar musik</span></button></div>
+    <p class="platforms"><span>Dalam pengembangan untuk</span> Windows <i>·</i> Linux <i>·</i> Android</p>
+    <div class="hero-actions"><a class="outline-button" href="#update-dialog" data-open="update-dialog">Baca pengumuman</a><button class="sound-control" id="sound-toggle" type="button" aria-pressed="false" hidden><span aria-hidden="true">♫</span> <span id="sound-label">Putar musik</span></button></div>
   </main>
   <figure class="character-quote" aria-label="Kutipan karakter"><blockquote id="character-line">“Kalau di sekolah, jangan diem-diem aja kali. Kamu lucu kalau ngomong.”</blockquote><figcaption id="character-name">— Ella</figcaption></figure>
   <div class="scene-switch" role="group" aria-label="Pilih latar CG" hidden><span>Latar</span><button type="button" data-scene="ella" aria-pressed="true">Ella</button><button type="button" data-scene="manda" aria-pressed="false">Manda</button><span id="scene-status" class="sr-only" role="status"></span></div>
   <footer class="hero-footer"><p>© 2026 MangMengMong Studio</p><nav aria-label="Media sosial"><a href="https://www.instagram.com/mangmengmong.studio/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.threads.com/@mangmengmong.studio" target="_blank" rel="noopener noreferrer">Threads ↗</a></nav></footer>
 </div>
+<dialog id="update-dialog" class="content-dialog" aria-labelledby="update-title">
+  <button class="close-dialog" type="button" aria-label="Tutup pengumuman"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+  <p class="eyebrow" data-update="label">PEMBARUAN PENGEMBANGAN</p>
+  <h2 id="update-title">Tentang perilisan Rehearsal</h2>
+  <p data-update="greeting">Halo, semuanya! 🐱</p>
+  <p data-update="schedule">Kami ingin menyampaikan bahwa perilisan Rehearsal, yang sebelumnya dijadwalkan pada 30 Oktober 2026, ditunda untuk waktu yang belum ditentukan.</p>
+  <p data-update="origin">Awalnya, proyek ini kami mulai dengan tujuan sederhana: membuat visual novel kecil, menyelesaikannya, lalu merilisnya sebagai game pertama kami.</p>
+  <p data-update="reason">Namun, seiring berjalannya waktu, cerita dan karakter di Rehearsal mulai hidup. Kami merasa game ini akan sangat sayang jika hanya sekadar dirilis. Karena itu, kami memutuskan untuk memberikan lebih banyak waktu agar pengalaman bermainnya bisa lebih baik, baik dari sisi cerita, visual, maupun keseluruhan kualitasnya.</p>
+  <p data-update="care">Ini bukan berarti kami mengejar kesempurnaan, tetapi kami percaya masih ada hal-hal yang bisa kami lakukan untuk membuat Rehearsal menjadi pengalaman yang lebih berkesan.</p>
+  <p data-update="progress">Kami akan terus mengembangkan Rehearsal dan membagikan perkembangannya di waktu mendatang.</p>
+  <p data-update="thanks">Terima kasih untuk semua yang sudah menunjukkan perhatian dan dukungannya terhadap proyek pertama kami.</p>
+  <p data-update="closing">Sampai jumpa di update berikutnya!</p>
+  <a class="follow-button" href="https://www.instagram.com/mangmengmong.studio/" target="_blank" rel="noopener noreferrer">Ikuti perkembangan ↗</a>
+</dialog>
 <dialog id="story-dialog" class="content-dialog" aria-labelledby="story-title">
   <button class="close-dialog" type="button" aria-label="Tutup cerita"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
   <p class="eyebrow">TENTANG REHEARSAL</p>
